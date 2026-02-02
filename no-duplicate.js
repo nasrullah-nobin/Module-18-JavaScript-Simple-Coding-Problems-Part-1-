@@ -1,16 +1,11 @@
-function noDuplicate(numbers) {
-  let newArray = [];
-
+function duplicate(numbers) {
+  const original = [];
   for (const number of numbers) {
-    if (newArray.includes(number) === false) {
-      newArray.push(number);
+    if (!original.includes(number)) {
+      original.push(number);
     }
   }
-  return newArray;
+  return original;
 }
-
-// const array = [21, 32, 5, 32, 44, 33, 22, 12, 32, 44, 21];
-const array = ['rohim', 'nahin', 'kahin', 'rohim', 'nahin', 'badol', 'kahin', 'rupa', 'sorna', 'rupa', 'rupa'];
-
-const duplicate = noDuplicate(array);
-console.log(duplicate);
+const array = duplicate([1,32,3,2,1,2,32]);
+console.log(array);
