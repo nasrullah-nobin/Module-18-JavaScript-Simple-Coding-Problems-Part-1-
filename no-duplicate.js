@@ -8,4 +8,5 @@ function duplicate(numbers) {
   return original;
 }
 const array = duplicate([1,32,3,2,1,2,32]);
-console.log(array);
+const name = duplicate(['sajid','kajid','sajid','kajid','rohim','nayem','rohim']);
+console.log(array,name);
