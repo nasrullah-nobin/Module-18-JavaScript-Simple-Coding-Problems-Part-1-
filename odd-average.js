@@ -1,52 +1,59 @@
-// function oddAverage(odds) {
-//   let sum = 0;
-//   let count = 0;
-//   for (const odd of odds) {
-//     if (odd % 2 === 1) {
-//       sum = sum + odd;
-//       count++;
-//     }
-//   }
-//   return count === 0 ? 0 : (sum / count).toFixed(2);
-// }
-
-// const array = [2, 4, 53, 254, 789, 90, 32];
-// const odd = oddAverage(array);
-// console.log("Odd average is:", odd);
-
-function evenAverage(numbers) {
-  let evens = [];
-  for (const number of numbers) {
-    if (number % 2 === 0) {
-      evens.push(number);
-    }
-  }
-  let sum = 0;
-  for (const even of evens) {
-    sum = sum + even;
-  }
-  const length = evens.length;
-  if (length === 0) return 0;
-  return sum / length;
-}
-
-const even = evenAverage([1, 43, 56, 3, 57, 97, 56, 32, 13, 67, 89, 4]);
-console.log(even);
-
-function evenAverage1(numbers) {
+function oddAvg(numbers) {
   let sum = 0;
   let count = 0;
-  for (const number of numbers) {
-    if (number % 2 === 0) {
+  for (number of numbers) {
+    if (number % 2 !== 0) {
       sum = sum + number;
       count++;
     }
   }
-  if (count === 0) {
-    return 0;
+  return count === 0 ? 0 : sum / count;
+}
+const odd1 = oddAvg([1, 32, 45, 65, 43, 6, 44]);
+console.log(odd1);
+
+// another method
+function oddAvg2(numbers) {
+  let sum = 0;
+  let count = 0;
+  for (number of numbers) {
+    number % 2 !== 0 ? ((sum = sum + number), count++) : 0;
   }
-  return (sum / count).toFixed(0);
+  return count === 0 ? 0 : sum / count;
+}
+const odd2 = oddAvg2([1, 32, 45, 65, 43, 6, 44]);
+console.log(odd2);
+
+// even average
+
+function evenAvg(numbers) {
+  const array = [];
+  let count = 0;
+  let sum = 0;
+  for (number of numbers) {
+    if (number % 2 === 0) {
+      array.push(number);
+      count++;
+    }
+  }
+  for (const arr of array) {
+    sum = sum + arr;
+  }
+  return (sum / count).toFixed(2);
 }
 
-const even1 = evenAverage1([1, 43, 56, 3, 57, 97, 56, 32, 13, 67, 89, 4]);
-console.log(even1);
+const odd3 = evenAvg([1, 32, 45, 65, 43, 6, 44]);
+console.log(odd3);
+
+// smart method
+function evenAvg1(numbers) {
+  let sum = 0;
+  let count = 0;
+  for (number of numbers) {
+    number % 2 === 0 ? ((sum = sum + number), count++) : 0;
+  }
+  return count === 0 ? 0 : (sum / count).toFixed(2);
+}
+
+const odd4 = evenAvg1([1, 32, 45, 65, 43, 6, 44]);
+console.log(odd4);
