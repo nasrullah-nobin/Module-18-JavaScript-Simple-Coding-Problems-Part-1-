@@ -1,34 +1,38 @@
-function inchFeet(inch) {
-  const feet = inch / 12;
-  return feet;
+function inchToFit(inch){
+  const feet = (inch / 12).toFixed(6);
+  return feet
 }
+const inc = inchToFit(5);
+console.log(inc)
 
-function inchFeet2(inch) {
-  const feetfraction = inch / 12;
-  const feetNumber = parseInt(feetfraction);
-  const inchRemaininig = inch % 12;
-  const result = feetNumber + " ft " + inchRemaininig + " inch ";
+// Short method
+function inchToFit(inch) {
+  return (inch / 12).toFixed(6);
+}
+const inch = inchToFit(75);
+console.log(inch);
+console.log('------------------------------------')
+const nobinHeight = inchToFit(65);
+console.log(nobinHeight);
+
+function inchToFit1(inch) {
+  const feet = inch / 12;
+  const feetNumber = parseInt(feet);
+  const feetRemaining = inch % 12;
+  const result = feetNumber + " ft " + feetRemaining + " inc ";
   return result;
 }
 
-const shuvoHeignt = inchFeet(75);
-// console.log(shuvoHeignt);
-const shuvoHeignt2 = inchFeet2(75);
-console.log(shuvoHeignt2)
+console.log(inchToFit1(75));
 
-function mileToKilo(mile){
-    const kilo = mile * 1.60934
-;
-    return kilo;
+function mileToKiloMeter(mile) {
+  return (mile * 1.609).toFixed(2);
 }
-
-const kilo = mileToKilo(6);
-console.log(kilo);
-
-
-function kiloMettertoMile(kilo){
-    const mile = kilo / 0.621371;
-    return mile
-}
-const mile = kiloMettertoMile(1);
+const mile = mileToKiloMeter(10);
 console.log(mile);
+
+function kiloMeterToMile(kilo) {
+  return (kilo / 1.609).toFixed(2);
+}
+const kilo = kiloMeterToMile(10);
+console.log(kilo);
